@@ -1,0 +1,41 @@
+[
+{
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+        "name": "Морковь",
+        "description": "Содержит большое количество бета-каротина",
+        "image": "",
+        "category": "Овощи",
+        "price": 10,
+        "created_at": "2026-03-12",
+        "updated_at": "2026-04-15"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 11,
+    "fields": {
+        "name": "Банан",
+        "description": "Содержит много витамина C",
+        "image": "",
+        "category": "Фрукты",
+        "price": 50,
+        "created_at": "2026-04-21",
+        "updated_at": "2026-04-23"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+        "name": "Апельсин",
+        "description": "Содержит много витамина C",
+        "image": "",
+        "category": "Фрукты",
+        "price": 70,
+        "created_at": "2026-04-22",
+        "updated_at": "2026-04-23"
+    }
+}
+]

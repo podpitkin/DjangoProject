@@ -3,18 +3,20 @@
     "model": "catalog.category",
     "pk": 1,
     "fields": {
-      "name": "Электроника",
-      "description": "Смартфоны, ноутбуки, гаджеты"
+      "name": "Овощи",
+      "description": "Вкусно и полезно"
     }
   },
   {
     "model": "catalog.product",
     "pk": 1,
     "fields": {
-      "name": "Смартфон XYZ Pro",
-      "description": "Флагманский смартфон",
-      "price": 69990.00,
-      "category": 1
+      "name": "Картофель",
+      "description": "Можно приготовить много разных блюд",
+      "category": "Овощи",
+      "price": 15,
+      "created_at": "2026-04-15",
+      "updated_at": "2026-04-20"
     }
   }
 ]

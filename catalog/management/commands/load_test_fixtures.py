@@ -1,22 +1,38 @@
-from django.core.management import call_command
-from django.core.management.base import BaseCommand
 import os
 import django
+from django.core.management import call_command
+from django.core.management.base import BaseCommand
 
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'catalog.settings')
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'catalog.settings')  # Замените на ваш путь
 django.setup()
 
 class Command(BaseCommand):
-    help = 'Создаёт тестовые данные через фикстуры после удаления существующих'
+    help = 'Загружает тестовые данные из фикстур'
+
+    def add_arguments(self, parser):
+        parser.add_argument(
+            '--fixture',
+            type=str,
+            default='test_products',
+            help='Имя фикстуры для загрузки (без расширения)'
+        )
+        parser.add_argument(
+            '--no-delete',
+            action='store_true',
+            help='Не удалять существующие данные перед загрузкой'
+        )
 
     def handle(self, *args, **options):
-        self.stdout.write('Удаление существующих данных...')
-        from catalog.models import Product, Category
-        Product.objects.all().delete()
-        Category.objects.all().delete()
-        self.stdout.write(self.style.SUCCESS('Существующие данные удалены'))
+        fixture_name = options['fixture']
 
-        self.stdout.write('Загрузка тестовых данных из фикстур...')
-        call_command('loaddata', 'test_fixtures')
-        self.stdout.write(self.style.SUCCESS('Тестовые данные успешно загружены из фикстур'))
+
+        self.stdout.write()
+
+
+        self.stdout.write()
+        call_command('loaddata', fixture_name)
+        self.stdout.write(
+            self.style.SUCCESS('Фикстура загружена')
+        )
