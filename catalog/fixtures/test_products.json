@@ -1,0 +1,20 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Электроника",
+      "description": "Смартфоны, ноутбуки, гаджеты"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Смартфон XYZ Pro",
+      "description": "Флагманский смартфон",
+      "price": 69990.00,
+      "category": 1
+    }
+  }
+]
