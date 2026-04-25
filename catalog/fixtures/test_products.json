@@ -1,0 +1,22 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Овощи",
+      "description": "Вкусно и полезно"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Картофель",
+      "description": "Можно приготовить много разных блюд",
+      "category": "Овощи",
+      "price": 15,
+      "created_at": "2026-04-15",
+      "updated_at": "2026-04-20"
+    }
+  }
+]
