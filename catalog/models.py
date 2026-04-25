@@ -1,11 +1,23 @@
 from django.db import models
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=150, verbose_name='Наименование категории')
+    description = models.TextField(verbose_name='Описание')
+
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
+
+    def __str__(self):
+        return self.name
+
+
 class Product(models.Model):
     name = models.CharField(max_length=150, verbose_name='Наименование')
     description = models.TextField(verbose_name='Описание')
     image = models.ImageField(upload_to='catalog/photo', verbose_name='Фото')
-    category = models.CharField(max_length=150, verbose_name='Категория')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
     price = models.IntegerField(verbose_name='Цена за покупку')
     created_at = models.DateField(verbose_name='Дата создания')
     updated_at = models.DateField(verbose_name='Дата последнего изменения')
@@ -18,13 +30,3 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-class Category(models.Model):
-    name = models.CharField(max_length=150, verbose_name='Наименование категории')
-    description = models.TextField(verbose_name='Описание')
-
-    class Meta:
-        verbose_name = 'Категория'
-        verbose_name_plural = 'Категории'
-
-    def __str__(self):
-        return self.name
